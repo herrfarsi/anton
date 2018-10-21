@@ -7,6 +7,8 @@ module.exports = {
       }
     )
 
+    config.resolve.extensions.push('.md');
+
     return config
   },
 }

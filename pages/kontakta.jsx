@@ -8,12 +8,6 @@ import pageTitle from '../data/kontakta/pageTitle.md';
 import hero from '../data/kontakta/hero.md';
 import body from '../data/kontakta/body.md';
 
-const text = hero;
-const letters = [];
-for(const l of text) {
-  letters.push(l);
-}
-
 export default () => (<>
   <Head>
     <title>{pageTitle}</title>
