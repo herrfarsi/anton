@@ -1,1 +1,1 @@
-#Vill du prata? <br />[antonlind@gmail.com](mailto:antonlind@gmail.com) <br />[0703531236](tel:0703531236)
+#Vill du prata? <br />Skicka ett mail <br />[the.anton.lind@gmail.com](mailto:the.anton.lind@gmail.com)
