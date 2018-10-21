@@ -1,1 +1,1 @@
-# Samlat arbete från kock <br/>och skrivare Anton Lind. <br/>Just nu på krog i skärgården.
+# Urval från kock <br/>och författare Anton Lind. <br/>Just nu på krog i skärgården.
