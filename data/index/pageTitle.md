@@ -1,1 +1,1 @@
-Introduktion | Anton Lind
+Skribent, Föreläsare och Kock | Anton Lind
