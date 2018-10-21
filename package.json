@@ -1,0 +1,26 @@
+{
+  "name": "anton",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "markdown-to-jsx": "^6.8.1",
+    "next": "latest",
+    "react": "^16.0.0",
+    "react-children-utilities": "^1.0.2",
+    "react-dom": "^16.0.0",
+    "react-markdown": "^4.0.3",
+    "react-scroll": "^1.7.10",
+    "slugify": "^1.3.1",
+    "styled-components": "^3.4.9",
+    "styled-media-query": "^2.0.2"
+  },
+  "devDependencies": {
+    "@zeit/next-mdx": "^1.2.0",
+    "babel-plugin-styled-components": "^1.8.0",
+    "raw-loader": "^0.5.1"
+  }
+}
