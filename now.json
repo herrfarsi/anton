@@ -1,0 +1,10 @@
+{
+  "name": "Anton",
+  "alias": "antonlind.me",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "engines": {
+    "node": "8.11.3"
+  }
+}

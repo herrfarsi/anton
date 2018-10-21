@@ -1,5 +1,5 @@
 import Children from 'react-children-utilities';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 const reveal = keyframes`
   0% {
@@ -33,7 +33,7 @@ const Hero = styled.div`
       white-space: pre;
     }
 
-    ${[...Array(150).keys()].map((value, key) => `
+    ${[...Array(150).keys()].map((value, key) => css`
       span.index-${key + 1} {
         animation: ${reveal} 1s cubic-bezier(0.645, 0.045, 0.355, 1) ${key * 3}ms forwards;
       }

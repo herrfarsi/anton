@@ -1,40 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet, injectGlobal } from 'styled-components'
-
-injectGlobal`
-  html {
-    box-sizing: border-box;
-  }
-
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-
-  body {
-    font-family: 'Heebo', sans-serif;
-    font-size: calc(12px + 0.75vmin);
-    line-height: 1.35;
-    color: #444;
-    font-weight: 300; 
-  }
-
-  a {
-    color: black;
-
-    &:hover {
-      color: blue;
-    }
-  }
-
-  p {
-    &:first-child {
-      margin-top: 0;
-    }
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-`;
+import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
   static getInitialProps ({ renderPage }) {
