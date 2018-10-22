@@ -30,7 +30,7 @@ const P = styled.p`
   }
 `;
 
-const LinkedP = ({ children, router }) => {
+const ProjectParagraph = ({ children, router }) => {
   const name = extractFirstText(children[0]);
 
   if (name) {
@@ -52,4 +52,4 @@ const LinkedP = ({ children, router }) => {
   return <p>{children}</p>
 };
 
-export default withRouter(LinkedP);
+export default withRouter(ProjectParagraph);

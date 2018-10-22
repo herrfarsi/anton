@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
-import Navigation from './Navigation';
+import Sidebar from './Sidebar';
 
 const Flex = styled.div`
   ${media.greaterThan('medium')`
@@ -22,7 +22,7 @@ const Main = styled.div`
 
 export default ({ children }) => (
   <Flex>
-    <Navigation />
+    <Sidebar />
     <Main>
       {children}
     </Main>

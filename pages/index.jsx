@@ -10,7 +10,7 @@ import body from '../markdown/index/body.md';
 
 import Hero from '../components/Hero';
 import Content from '../components/Content';
-import LinkedP from '../components/LinkedP';
+import ProjectParagraph from '../components/ProjectParagraph';
 
 const opts = {
   duration: 1000,
@@ -65,7 +65,7 @@ const Index = class extends React.Component {
           options={{
             overrides: {
                 p: {
-                    component: LinkedP,
+                    component: ProjectParagraph,
                 },
             },
           }}  
