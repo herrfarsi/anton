@@ -1,2 +1,2 @@
 # Anton Lind 
-[https://antonlind.me](https://antonlind.me)
+[https://lind.works](https://lind.works)
