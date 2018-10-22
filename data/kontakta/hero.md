@@ -1,1 +1,1 @@
-#Vill du prata? <br />Skicka ett mail till <br />[mailto:anton@lind.works](mailto:anton@lind.works)
+#Vill du prata? <br />Skicka ett mail till <br />[anton@lind.works](mailto:anton@lind.works)

@@ -21,46 +21,13 @@ const reveal = keyframes`
   }
 `;
 
-const List = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-`;
-
-const A = styled.a`
-  display: inline-block;
-  color: black;
-  position: relative;
-  margin-bottom: ${({ topMargin }) => topMargin ? '3vw' : '0'};
-  text-decoration: none;
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: -5px;
-    right: -5px;
-    top: 50%;
-    height: 5px;
-    background: currentColor;
-    transform: translateY(-50%) rotateX(90deg);
-    ${({ currentRoute }) => (currentRoute !== undefined && !currentRoute) && `
-      transform: translateY(-50%) rotateX(0);
-    `};
-    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-  }
-
-  &:hover {
-    color: blue;
-  }
-`;
-
 const Sidebar = styled.div`
   animation: ${reveal} 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   padding: 10vmin;
   font-size: calc(12px + 1vw);
   color: #999;
   position: absolute;
+  backface-visibility: hidden;
 
   ${media.greaterThan('medium')`
     position: relative;
@@ -74,6 +41,37 @@ const Sidebar = styled.div`
     width: calc(70px + 20vw);
     flex-shrink: 0;
   `}
+`;
+
+const List = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`;
+
+const A = styled.a`
+  display: inline-block;
+  color: black;
+  position: relative;
+  margin-bottom: ${({ topMargin }) => topMargin ? '3vw' : '0'};
+  text-decoration: none;
+  perspective: 400;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    top: 50%;
+    height: 5px;
+    background: currentColor;
+    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform: translateY(-50%) rotateX(90deg);
+    ${({ currentRoute }) => (currentRoute !== undefined && !currentRoute) && `
+      transform: translateY(-50%) rotateX(0);
+    `};
+  }
 `;
 
 const DesktopLinks = styled.div`

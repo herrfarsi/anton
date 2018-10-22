@@ -4,6 +4,7 @@ import { scroller, animateScroll } from 'react-scroll';
 import Markdown, { compiler } from 'markdown-to-jsx';
 
 import pageTitle from '../data/index/pageTitle.md';
+import pageDescription from '../data/index/pageDescription.md';
 import hero from '../data/index/hero.md';
 import body from '../data/index/body.md';
 
@@ -22,13 +23,13 @@ const Index = class extends React.Component {
     const { 
       router: { 
         query: { 
-          name,
+          projekt,
         },
       },
     } = this.props;
 
-    if(name) {
-      scroller.scrollTo(name, opts);
+    if(projekt) {
+      scroller.scrollTo(projekt, { opts });
     }
   }
 
@@ -36,13 +37,13 @@ const Index = class extends React.Component {
     const { 
       router: { 
         query: { 
-          name,
+          projekt,
         },
       },
     } = this.props;
 
-    if(name) {
-      scroller.scrollTo(name, opts);
+    if(projekt) {
+      scroller.scrollTo(projekt, opts);
     } else {
       animateScroll.scrollTo(0, opts);
     }
@@ -52,6 +53,8 @@ const Index = class extends React.Component {
     return (<>
       <Head>
         <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <meta property="og:image" content="/static/anton-lind.jpg" />
       </Head>
       <Hero>
         {compiler(hero)}

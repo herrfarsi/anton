@@ -37,7 +37,7 @@ const ProjectLink = ({ children }) => {
   const slug = slugify(split[1], { lower: true });
 
   return (
-    <li>{split[0]}<br /><AnchorLink href={{ pathname: '/', query: { name: slug } }} passHref><A>{split[1]}</A></AnchorLink></li>
+    <li>{split[0]}<br /><AnchorLink href={{ pathname: '/', query: { projekt: slug } }} passHref><A>{split[1]}</A></AnchorLink></li>
   )
 };
 

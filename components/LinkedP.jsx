@@ -14,6 +14,7 @@ function extractFirstText(str){
 const P = styled.p`
   position: relative;
   z-index: 0;
+
   &::before {
     content: "";
     display: block;
@@ -36,7 +37,7 @@ const LinkedP = ({ children, router }) => {
     const slug = slugify(name, { lower: true });
 
     return (
-      <P name={slug} id={slug} current={router.query.name === slug}>
+      <P name={slug} id={slug} current={router.query.projekt === slug}>
         {React.Children.map(children, c => {
           if (typeof c === 'string') {
             return c.replace(name, '');

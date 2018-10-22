@@ -2,6 +2,7 @@ import React from 'react'
 import App, { Container } from 'next/app';
 import Router from 'next/router'
 import { createGlobalStyle } from 'styled-components'
+import media from 'styled-media-query';
 
 import Layout from '../components/Layout';
 import Loader from '../components/Loader';
@@ -26,9 +27,11 @@ const GlobalStyle = createGlobalStyle`
   a {
     color: black;
 
-    &:hover {
-      color: blue;
-    }
+    ${media.greaterThan('medium')`
+      &:hover {
+        color: blue;
+      }
+    `}
   }
 
   p {

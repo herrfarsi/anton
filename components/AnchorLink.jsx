@@ -5,7 +5,7 @@ import React, { Children } from 'react'
 const AnchorLink = ({ router, children, ...props }) => {
   const child = Children.only(children)
 
-  const currentRoute = router.query.name === props.href.query.name ? false : true;
+  const currentRoute = router.query.projekt === props.href.query.projekt ? false : true;
 
   return <Link {...props}>{React.cloneElement(child, { currentRoute })}</Link>
 }
