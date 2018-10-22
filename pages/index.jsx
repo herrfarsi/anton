@@ -3,10 +3,10 @@ import { withRouter } from 'next/router'
 import { scroller, animateScroll } from 'react-scroll';
 import Markdown, { compiler } from 'markdown-to-jsx';
 
-import pageTitle from '../data/index/pageTitle.md';
-import pageDescription from '../data/index/pageDescription.md';
-import hero from '../data/index/hero.md';
-import body from '../data/index/body.md';
+import pageTitle from '../markdown/index/pageTitle.md';
+import pageDescription from '../markdown/index/pageDescription.md';
+import hero from '../markdown/index/hero.md';
+import body from '../markdown/index/body.md';
 
 import Hero from '../components/Hero';
 import Content from '../components/Content';

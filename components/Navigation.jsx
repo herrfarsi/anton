@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import media from 'styled-media-query';
 import Markdown from 'markdown-to-jsx';
 
-import data from '../data/projects.md';
+import data from '../markdown/projects.md';
 
 import ActiveLink from './ActiveLink';
 import ProjectLink from './ProjectLink';
