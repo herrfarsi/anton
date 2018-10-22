@@ -1,5 +1,6 @@
 import Children from 'react-children-utilities';
 import styled, { keyframes, css } from 'styled-components';
+import media from 'styled-media-query';
 
 const reveal = keyframes`
   0% {
@@ -14,9 +15,13 @@ const reveal = keyframes`
 
 const Hero = styled.div`
   width: 100%;
-  min-height: 80vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
+
+  ${media.greaterThan('medium')`
+    min-height: 80vh;
+  `}
 
   h1 {
     margin: 0;
