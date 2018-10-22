@@ -25,7 +25,7 @@ const Hero = styled.div`
 
   h1 {
     margin: 0;
-    font-size: calc(12px + 2.25vw);
+    font-size: calc(13px + 2.25vw);
     color: black;
     position: relative;
     perspective: 2000;

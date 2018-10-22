@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Heebo', sans-serif;
-    font-size: calc(12px + 0.75vmin);
+    font-size: calc(13px + 0.75vmin);
     line-height: 1.35;
     color: #444;
     font-weight: 300; 

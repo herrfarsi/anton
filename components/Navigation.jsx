@@ -24,7 +24,7 @@ const reveal = keyframes`
 const Sidebar = styled.div`
   animation: ${reveal} 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   padding: 10vmin;
-  font-size: calc(12px + 1vw);
+  font-size: calc(13px + 1vw);
   color: #999;
   position: absolute;
   backface-visibility: hidden;
