@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import media from 'styled-media-query';
 
@@ -31,15 +33,17 @@ const Footer = styled.div`
     vertical-align: center;
     margin-right: 20px;
   }
-  
+
   ${media.greaterThan('medium')`
     max-width: 60vmin;
     width: 100%;
-  `}
+  `};
 `;
 
-export default ({ children }) => (
-  <Footer>
-    {children}
-  </Footer>
-);
+const FooterComponent = ({ children }) => <Footer>{children}</Footer>;
+
+FooterComponent.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default FooterComponent;

@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import App, { Container } from 'next/app';
-import Router from 'next/router'
-import { createGlobalStyle } from 'styled-components'
+import Router from 'next/router';
+import { createGlobalStyle } from 'styled-components';
 import media from 'styled-media-query';
 
 import Layout from '../components/Layout';
@@ -52,21 +52,24 @@ export default class MyApp extends App {
       loading: false,
     };
 
-    Router.events.on('routeChangeStart', (url) => {
+    Router.events.on('routeChangeStart', () => {
       this.setState({ loading: true });
-    })
-    Router.events.on('routeChangeComplete', () => this.setState({ loading: false }))
-    Router.events.on('routeChangeError', () => this.setState({ loading: false }))
+    });
+    Router.events.on('routeChangeComplete', () => this.setState({ loading: false }));
+    Router.events.on('routeChangeError', () => this.setState({ loading: false }));
   }
-  
-  render () {
-    const { Component, pageProps } = this.props
-    return <Container>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      <Loader isVisible={this.state.loading} />
-      <GlobalStyle />
-    </Container>
+
+  render() {
+    const { Component, pageProps } = this.props;
+
+    return (
+      <Container>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        <Loader isVisible={this.state.loading} />
+        <GlobalStyle />
+      </Container>
+    );
   }
 }

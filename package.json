@@ -1,6 +1,7 @@
 {
   "name": "anton",
   "version": "1.0.0",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next",
     "build": "NODE_ENV=production next build",
@@ -9,6 +10,7 @@
   "dependencies": {
     "markdown-to-jsx": "^6.8.1",
     "next": "latest",
+    "prop-types": "^15.6.2",
     "react": "^16.0.0",
     "react-children-utilities": "^1.0.2",
     "react-dom": "^16.0.0",
@@ -19,7 +21,22 @@
     "styled-media-query": "^2.0.2"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "babel-plugin-styled-components": "^1.8.0",
-    "raw-loader": "^0.5.1"
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-babel": "^5.2.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.14.3",
+    "raw-loader": "^0.5.1",
+    "stylelint": "^9.6.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.5.0"
   }
 }

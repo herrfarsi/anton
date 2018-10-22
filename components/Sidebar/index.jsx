@@ -1,8 +1,9 @@
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import media from 'styled-media-query';
 import Markdown from 'markdown-to-jsx';
 
-import data from '../markdown/projects.md';
+import data from '../../markdown/projects.md';
 
 import ActiveLink from './ActiveLink';
 import ProjectLink from './ProjectLink';
@@ -40,7 +41,7 @@ const Sidebar = styled.div`
     flex-direction: column;
     width: calc(70px + 20vw);
     flex-shrink: 0;
-  `}
+  `};
 `;
 
 const List = styled.ul`
@@ -53,12 +54,12 @@ const A = styled.a`
   display: inline-block;
   color: black;
   position: relative;
-  margin-bottom: ${({ topMargin }) => topMargin ? '3vw' : '0'};
+  margin-bottom: ${({ topMargin }) => (topMargin ? '3vw' : '0')};
   text-decoration: none;
   perspective: 400;
 
   &::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     left: -5px;
@@ -68,8 +69,12 @@ const A = styled.a`
     background: currentColor;
     transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
     transform: translateY(-50%) rotateX(90deg);
-    ${({ currentRoute }) => (currentRoute !== undefined && !currentRoute) && `
-      transform: translateY(-50%) rotateX(0);
+
+    ${({ currentRoute }) =>
+      currentRoute !== undefined &&
+      !currentRoute &&
+      `
+        transform: translateY(-50%) rotateX(0);
     `};
   }
 `;
@@ -79,26 +84,35 @@ const DesktopLinks = styled.div`
 
   ${media.greaterThan('medium')`
     display: block;
-  `}
+  `};
 `;
 
 export default () => (
   <Sidebar>
     <List>
-      <li><ActiveLink href="/" passHref><A>Introduktion</A></ActiveLink></li>
-      <li><ActiveLink href="/kontakta" passHref><A topMargin={true}>Kontakta mig</A></ActiveLink></li>
+      <li>
+        <ActiveLink href="/" passHref>
+          <A>Introduktion</A>
+        </ActiveLink>
+      </li>
+      <li>
+        <ActiveLink href="/kontakta" passHref>
+          <A topMargin>Kontakta mig</A>
+        </ActiveLink>
+      </li>
       <DesktopLinks>
-        <Markdown 
-          children={data} 
+        <Markdown
           options={{
             overrides: {
-                p: {
-                    component: ProjectLink,
-                },
+              p: {
+                component: ProjectLink,
+              },
             },
-          }}    
-        />
+          }}
+        >
+          {data}
+        </Markdown>
       </DesktopLinks>
     </List>
   </Sidebar>
-)
+);

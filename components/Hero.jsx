@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import Children from 'react-children-utilities';
 import styled, { keyframes, css } from 'styled-components';
 import media from 'styled-media-query';
@@ -21,7 +23,7 @@ const Hero = styled.div`
 
   ${media.greaterThan('medium')`
     min-height: 80vh;
-  `}
+  `};
 
   h1 {
     margin: 0;
@@ -30,7 +32,7 @@ const Hero = styled.div`
     position: relative;
     perspective: 2000;
     font-weight: 300;
-  
+
     span {
       opacity: 0;
       position: relative;
@@ -39,18 +41,17 @@ const Hero = styled.div`
     }
 
     ${[...Array(150).keys()].map((value, key) => css`
-      span.index-${key + 1} {
-        animation: ${reveal} 1s cubic-bezier(0.645, 0.045, 0.355, 1) ${key * 3}ms forwards;
-      }
-    `)}
+        span.index-${key + 1} {
+          animation: ${reveal} 1s cubic-bezier(0.645, 0.045, 0.355, 1) ${key * 3}ms forwards;
+        }
+      `
+    )}
   }
 `;
 
-export default class extends React.Component {
+class HeroComponent extends React.Component {
   renderChildren() {
-    const {
-      children,
-    } = this.props;
+    const { children } = this.props;
 
     let index = 0;
 
@@ -58,19 +59,21 @@ export default class extends React.Component {
       if (typeof child === 'string') {
         return [...child].map(char => {
           index += 1;
-          return (<span className={`index-${index}`}>{char}</span>);
+          return <span className={`index-${index}`}>{char}</span>;
         });
       }
-      
+
       return child;
-    })
+    });
   }
 
   render() {
-    return (
-      <Hero >
-        {this.renderChildren()}
-      </Hero>
-    );
+    return <Hero>{this.renderChildren()}</Hero>;
   }
+}
+
+HeroComponent.propTypes = {
+  children: PropTypes.node.isRequired,
 };
+
+export default HeroComponent;

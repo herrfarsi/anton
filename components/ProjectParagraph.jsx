@@ -1,14 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { withRouter } from 'next/router'
+import { withRouter } from 'next/router';
 
 import slugify from '../utils/slugify';
 
-function extractFirstText(str){
+function extractFirstText(str) {
   const matches = str.match(/(\(.*?\))/);
-  return matches
-    ? matches[1]
-    : false;
+
+  return matches ? matches[1] : false;
 }
 
 const P = styled.p`
@@ -16,7 +16,7 @@ const P = styled.p`
   z-index: 0;
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     z-index: -1;
@@ -25,7 +25,7 @@ const P = styled.p`
     right: -10px;
     bottom: 5px;
     border-left: 5px solid black;
-    transform: ${({ current }) => current ? 'rotateX(0)' : 'rotateX(90deg)'};
+    transform: ${({ current }) => (current ? 'rotateX(0)' : 'rotateX(90deg)')};
     transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 `;
@@ -46,10 +46,15 @@ const ProjectParagraph = ({ children, router }) => {
           return c;
         })}
       </P>
-    )
+    );
   }
 
-  return <p>{children}</p>
+  return <p>{children}</p>;
+};
+
+ProjectParagraph.propTypes = {
+  children: PropTypes.node.isRequired,
+  router: PropTypes.any.isRequired, // eslint-disable-line
 };
 
 export default withRouter(ProjectParagraph);

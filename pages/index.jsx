@@ -1,5 +1,7 @@
-import Head from 'next/head'
-import { withRouter } from 'next/router'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Head from 'next/head';
+import { withRouter } from 'next/router';
 import { scroller, animateScroll } from 'react-scroll';
 import Markdown, { compiler } from 'markdown-to-jsx';
 
@@ -16,33 +18,29 @@ const opts = {
   duration: 1000,
   smooth: true,
   offset: -15,
-}
+};
 
 const Index = class extends React.Component {
   componentDidMount() {
-    const { 
-      router: { 
-        query: { 
-          projekt,
-        },
+    const {
+      router: {
+        query: { projekt },
       },
     } = this.props;
 
-    if(projekt) {
+    if (projekt) {
       scroller.scrollTo(projekt, { opts });
     }
   }
 
   componentDidUpdate() {
-    const { 
-      router: { 
-        query: { 
-          projekt,
-        },
+    const {
+      router: {
+        query: { projekt },
       },
     } = this.props;
 
-    if(projekt) {
+    if (projekt) {
       scroller.scrollTo(projekt, opts);
     } else {
       animateScroll.scrollTo(0, opts);
@@ -50,29 +48,34 @@ const Index = class extends React.Component {
   }
 
   render() {
-    return (<>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
-        <meta property="og:image" content="/static/anton-lind.jpg" />
-      </Head>
-      <Hero>
-        {compiler(hero)}
-      </Hero>
-      <Content>
-        <Markdown 
-          children={body}
-          options={{
-            overrides: {
+    return (
+      <>
+        <Head>
+          <title>{pageTitle}</title>
+          <meta name="description" content={pageDescription} />
+          <meta property="og:image" content="/static/anton-lind.jpg" />
+        </Head>
+        <Hero>{compiler(hero)}</Hero>
+        <Content>
+          <Markdown
+            options={{
+              overrides: {
                 p: {
-                    component: ProjectParagraph,
+                  component: ProjectParagraph,
                 },
-            },
-          }}  
-        />
-      </Content>
-    </>);
+              },
+            }}
+          >
+            {body}
+          </Markdown>
+        </Content>
+      </>
+    );
   }
+};
+
+Index.propTypes = {
+  router: PropTypes.any.isRequired, // eslint-disable-line
 };
 
 export default withRouter(Index);

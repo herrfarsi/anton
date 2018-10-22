@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
@@ -9,7 +11,7 @@ const Flex = styled.div`
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: row-reverse;
-  `}
+  `};
 `;
 
 const Main = styled.div`
@@ -20,11 +22,15 @@ const Main = styled.div`
   justify-content: space-between;
 `;
 
-export default ({ children }) => (
+const Layout = ({ children }) => (
   <Flex>
     <Sidebar />
-    <Main>
-      {children}
-    </Main>
+    <Main>{children}</Main>
   </Flex>
 );
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default Layout;
