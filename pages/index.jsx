@@ -22,18 +22,14 @@ const opts = {
 
 const Index = class extends React.Component {
   componentDidMount() {
-    const {
-      router: {
-        query: { projekt },
-      },
-    } = this.props;
-
-    if (projekt) {
-      scroller.scrollTo(projekt, { opts });
-    }
+    this.goTo();
   }
 
   componentDidUpdate() {
+    this.goTo();
+  }
+
+  goTo() {
     const {
       router: {
         query: { projekt },

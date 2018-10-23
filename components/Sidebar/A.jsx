@@ -12,19 +12,21 @@ export default styled.a`
     content: '';
     display: block;
     position: absolute;
-    left: -5px;
-    right: -5px;
+    left: -2px;
+    right: -2px;
     top: 50%;
-    height: 5px;
+    height: 4px;
     background: currentColor;
-    transform: translateY(-50%) rotateX(90deg);
+    transform: translateY(-2px) rotateY(-90deg);
     transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    outline: 1px solid transparent;
+    transform-origin: 0 50%;
 
     ${({ currentRoute }) =>
       currentRoute !== undefined &&
       !currentRoute &&
       `
-        transform: translateY(-50%) rotateX(0);
+        transform: translateY(-2px) rotateY(0);
     `};
   }
 

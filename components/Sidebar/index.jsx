@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import media from 'styled-media-query';
 import Markdown from 'markdown-to-jsx';
 
-import data from '../../markdown/projects.md';
+import data from '../../markdown/navigation.md';
 
 import A from './A';
 import ActiveLink from './ActiveLink';
@@ -27,16 +27,14 @@ const Sidebar = styled.div`
   animation: ${reveal} 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   padding: 10vmin;
   font-size: calc(13px + 1vw);
-  color: #999;
   position: absolute;
-  backface-visibility: hidden;
 
   ${media.greaterThan('medium')`
     position: relative;
     padding: 10vmin 10vmin 10vmin 0;
     position: sticky;
     top: 0;
-    height: 100vh;
+    height: calc(100vh - 1px); // Last name in navigation jumps if not doing this
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -63,12 +61,12 @@ export default () => (
   <Sidebar>
     <List>
       <li>
-        <ActiveLink href="/" passHref>
+        <ActiveLink scroll={false} href="/" passHref>
           <A>Introduktion</A>
         </ActiveLink>
       </li>
       <li>
-        <ActiveLink href="/kontakta" passHref>
+        <ActiveLink scroll={false} href="/kontakta" passHref>
           <A topMargin>Kontakta mig</A>
         </ActiveLink>
       </li>

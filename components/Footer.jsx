@@ -26,8 +26,8 @@ const Footer = styled.div`
 
   img {
     background: #ccc;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     object-fit: cover;
     border-radius: 50%;
     vertical-align: center;

@@ -7,17 +7,17 @@ import media from 'styled-media-query';
 const reveal = keyframes`
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translate3d(-100px, 0, 0);
   }
   100% {
     opacity: 1;
-    transform: translateX(0%);
+    transform: translate3d(0px, 0, 0);
   }
 `;
 
 const Hero = styled.div`
   width: 100%;
-  min-height: 60vh;
+  min-height: 400px;
   display: flex;
   align-items: center;
 
@@ -38,14 +38,15 @@ const Hero = styled.div`
       position: relative;
       display: inline-block;
       white-space: pre;
+      will-change: transform;
     }
 
-    ${[...Array(150).keys()].map((value, key) => css`
+    ${[...Array(150).keys()].map((value, key) /* eslint-disable-line */ => css`
         span.index-${key + 1} {
           animation: ${reveal} 1s cubic-bezier(0.645, 0.045, 0.355, 1) ${key * 3}ms forwards;
         }
-      `
-    )}
+      `,
+    )};
   }
 `;
 

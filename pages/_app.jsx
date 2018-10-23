@@ -1,6 +1,5 @@
 import React from 'react';
 import App, { Container } from 'next/app';
-import Router from 'next/router';
 import { createGlobalStyle } from 'styled-components';
 import media from 'styled-media-query';
 
@@ -22,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.35;
     color: #444;
     font-weight: 300; 
+    background: #f4eee3;
   }
 
   a {
@@ -44,21 +44,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export default class MyApp extends App {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      loading: false,
-    };
-
-    Router.events.on('routeChangeStart', () => {
-      this.setState({ loading: true });
-    });
-    Router.events.on('routeChangeComplete', () => this.setState({ loading: false }));
-    Router.events.on('routeChangeError', () => this.setState({ loading: false }));
-  }
-
+export default class extends App {
   render() {
     const { Component, pageProps } = this.props;
 
@@ -67,7 +53,7 @@ export default class MyApp extends App {
         <Layout>
           <Component {...pageProps} />
         </Layout>
-        <Loader isVisible={this.state.loading} />
+        <Loader />
         <GlobalStyle />
       </Container>
     );

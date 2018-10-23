@@ -24,7 +24,7 @@ const P = styled.p`
     left: -20px;
     right: -10px;
     bottom: 5px;
-    border-left: 5px solid black;
+    border-left: 4px solid black;
     transform: ${({ current }) => (current ? 'rotateX(0)' : 'rotateX(90deg)')};
     transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
