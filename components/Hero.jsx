@@ -42,11 +42,10 @@ const Hero = styled.div`
     }
 
     ${[...Array(150).keys()].map((value, key) /* eslint-disable-line */ => css`
-        span.index-${key + 1} {
-          animation: ${reveal} 1s cubic-bezier(0.645, 0.045, 0.355, 1) ${key * 3}ms forwards;
-        }
-      `,
-    )};
+      span.index-${key + 1} {
+        animation: ${reveal} 1s cubic-bezier(0.645, 0.045, 0.355, 1) ${key * 3}ms forwards;
+      }
+    `)};
   }
 `;
 
@@ -56,9 +55,9 @@ class HeroComponent extends React.Component {
 
     let index = 0;
 
-    return Children.deepMap(children, child => {
+    return Children.deepMap(children, (child) => {
       if (typeof child === 'string') {
-        return [...child].map(char => {
+        return [...child].map((char) => {
           index += 1;
           return <span className={`index-${index}`}>{char}</span>;
         });

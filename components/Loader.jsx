@@ -13,8 +13,7 @@ const Loader = styled.div`
   z-index: 2;
   transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
   pointer-events: none;
-  transform: ${({ isLoading }) =>
-    isLoading ? 'translateY(-50%)' : 'translateY(-50%) translateX(-100px) rotateY(90deg)'};
+  transform: ${({ isLoading }) => (isLoading ? 'translateY(-50%)' : 'translateY(-50%) translateX(-100px) rotateY(90deg)')};
 `;
 
 const Video = styled.video`

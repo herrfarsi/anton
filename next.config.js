@@ -3,12 +3,12 @@ module.exports = {
     config.module.rules.push(
       {
         test: /\.md$/,
-        use: 'raw-loader'
-      }
-    )
+        use: 'raw-loader',
+      },
+    );
 
     config.resolve.extensions.push('.md');
 
-    return config
+    return config;
   },
 }

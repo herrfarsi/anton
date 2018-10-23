@@ -38,7 +38,7 @@ const ProjectParagraph = ({ children, router }) => {
 
     return (
       <P name={slug} id={slug} current={router.query.projekt === slug}>
-        {React.Children.map(children, c => {
+        {React.Children.map(children, (c) => {
           if (typeof c === 'string') {
             return c.replace(name, '');
           }

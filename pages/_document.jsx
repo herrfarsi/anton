@@ -18,10 +18,6 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
-          />
           <link href="https://fonts.googleapis.com/css?family=Heebo:300" rel="stylesheet" />
         </Head>
         <body>

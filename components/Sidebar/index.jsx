@@ -23,7 +23,7 @@ const reveal = keyframes`
   }
 `;
 
-const Sidebar = styled.div`
+const Sidebar = styled.nav`
   animation: ${reveal} 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   padding: 10vmin;
   font-size: calc(13px + 1vw);

@@ -3,7 +3,7 @@ import App, { Container } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
 import media from 'styled-media-query';
 import Router from 'next/router';
-
+import { Normalize } from 'styled-normalize';
 import { initGA, logPageView } from '../utils/analytics';
 
 import Layout from '../components/Layout';
@@ -73,6 +73,7 @@ export default class extends App {
           <Component {...pageProps} />
         </Layout>
         <Loader />
+        <Normalize />
         <GlobalStyle />
       </Container>
     );
