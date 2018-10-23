@@ -5,6 +5,7 @@ import Markdown from 'markdown-to-jsx';
 
 import data from '../../markdown/projects.md';
 
+import A from './A';
 import ActiveLink from './ActiveLink';
 import ProjectLink from './ProjectLink';
 
@@ -48,35 +49,6 @@ const List = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-`;
-
-const A = styled.a`
-  display: inline-block;
-  color: black;
-  position: relative;
-  margin-bottom: ${({ topMargin }) => (topMargin ? '3vw' : '0')};
-  text-decoration: none;
-  perspective: 400;
-
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: -5px;
-    right: -5px;
-    top: 50%;
-    height: 5px;
-    background: currentColor;
-    transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transform: translateY(-50%) rotateX(90deg);
-
-    ${({ currentRoute }) =>
-      currentRoute !== undefined &&
-      !currentRoute &&
-      `
-        transform: translateY(-50%) rotateX(0);
-    `};
-  }
 `;
 
 const DesktopLinks = styled.div`
