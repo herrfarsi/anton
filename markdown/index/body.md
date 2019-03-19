@@ -1,4 +1,4 @@
-Jag är en mångspråkig skribent och matlagare med en marginellt vassare penna än kniv och jonglerar allt på min enhjuling. Livet är just lite som att cykla, när pedalerna slutar snurra tappar man balansen. Dessutom är det lätt när man kan. Jag trivs bäst i rörelse helt enkelt och försöker ständigt kombinera mina intressen och förmågor.
+Jag är en mångspråkig skribent och matlagare med en marginellt vassare penna än kniv och jonglerar allt på min enhjuling. Livet är just lite som att cykla, när pedalerna slutar snurra tappar man balansen. Dessutom är det lätt när man kan. Jag trivs bäst i rörelse helt enkelt och försöker ständigt kombinera mina intressen och förmågor!
 
 (Bryggvingen)Just nu arbetar jag som köksmästare på sommarkrogen [Bryggvingen](http://www.bryggvingen.se/). Ett fantastiskt givande jobb med den av mig etablerade sloganen “Från fiskekvot till fiskekrog”. Krögaren är även fiskare och jag tillagar helt enkelt vad havet behagar ge oss. En unik restaurang på många sätt och jag trivs verkligen i rollen som kreativ ledare för köket. Mat ska vara vacker att se på och god att äta, håller man sig till den enkla devisen blir det bra.
 
