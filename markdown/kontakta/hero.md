@@ -1,1 +1,0 @@
-#Vill du prata? <br />Skicka ett mail till <br />[anton@lind.works](mailto:anton@lind.works)

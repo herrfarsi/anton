@@ -1,14 +1,12 @@
-module.exports = {
-  webpack: (config) => {
-    config.module.rules.push(
-      {
-        test: /\.md$/,
-        use: 'raw-loader',
-      },
-    );
+const images = require('remark-images');
+const emoji = require('remark-emoji');
 
-    config.resolve.extensions.push('.md');
-
-    return config;
+const withMDX = require('@zeit/next-mdx')({
+  options: {
+    mdPlugins: [images, emoji],
   },
-}
+});
+
+module.exports = withMDX({
+  pageExtensions: ['js', 'jsx', 'mdx'],
+});

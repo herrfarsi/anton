@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { withRouter } from 'next/router';
 import { scroller, animateScroll } from 'react-scroll';
-import Markdown, { compiler } from 'markdown-to-jsx';
 
-import pageTitle from '../markdown/index/pageTitle.md';
-import pageDescription from '../markdown/index/pageDescription.md';
-import hero from '../markdown/index/hero.md';
-import body from '../markdown/index/body.md';
+import PageTitle from '../markdown/index/pageTitle.mdx';
+import PageDescription from '../markdown/index/pageDescription.mdx';
+import HeroBody from '../markdown/index/hero.mdx';
+import Body from '../markdown/index/body.mdx';
 
 import Hero from '../components/Hero';
 import Content from '../components/Content';
@@ -47,23 +46,15 @@ const Index = class extends React.Component {
     return (
       <>
         <Head>
-          <title>{pageTitle}</title>
-          <meta name="description" content={pageDescription} />
+          <title><PageTitle /></title>
+          <meta name="description" content={<PageDescription />} />
           <meta property="og:image" content="/static/anton-lind.jpg" />
         </Head>
-        <Hero>{compiler(hero)}</Hero>
+        <Hero><HeroBody /></Hero>
         <Content>
-          <Markdown
-            options={{
-              overrides: {
-                p: {
-                  component: ProjectParagraph,
-                },
-              },
-            }}
-          >
-            {body}
-          </Markdown>
+          <Body
+            components={{ p: ProjectParagraph }}
+          />
         </Content>
       </>
     );

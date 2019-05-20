@@ -1,9 +1,8 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import media from 'styled-media-query';
-import Markdown from 'markdown-to-jsx';
 
-import data from '../../markdown/navigation.md';
+import Data from '../../markdown/navigation.mdx';
 
 import A from './A';
 import ActiveLink from './ActiveLink';
@@ -71,17 +70,9 @@ export default () => (
         </ActiveLink>
       </li>
       <DesktopLinks>
-        <Markdown
-          options={{
-            overrides: {
-              p: {
-                component: ProjectLink,
-              },
-            },
-          }}
-        >
-          {data}
-        </Markdown>
+        <Data
+          components={{ p: ProjectLink }}
+        />
       </DesktopLinks>
     </List>
   </Sidebar>

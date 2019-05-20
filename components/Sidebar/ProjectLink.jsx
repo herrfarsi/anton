@@ -13,7 +13,7 @@ const Name = styled.span`
 `;
 
 const ProjectLink = ({ children }) => {
-  const split = children[0].split(',');
+  const split = children.split(',');
   const slug = slugify(split[1], { lower: true });
 
   return (

@@ -1,26 +1,25 @@
 import React from 'react';
 import Head from 'next/head';
-import Markdown, { compiler } from 'markdown-to-jsx';
 
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 
-import pageTitle from '../markdown/kontakta/pageTitle.md';
-import pageDescription from '../markdown/index/pageDescription.md';
-import hero from '../markdown/kontakta/hero.md';
-import body from '../markdown/kontakta/body.md';
+import PageTitle from '../markdown/kontakta/pageTitle.mdx';
+import PageDescription from '../markdown/index/pageDescription.mdx';
+import HeroBody from '../markdown/kontakta/hero.mdx';
+import Body from '../markdown/kontakta/body.mdx';
 
 export default () => (
   <>
     <Head>
-      <title>{pageTitle}</title>
-      <meta name="description" content={pageDescription} />
+      <title><PageTitle /></title>
+      <meta name="description" content={<PageDescription />} />
       <meta property="og:image" content="/static/anton-lind.jpg" />
     </Head>
-    <Hero>{compiler(hero)}</Hero>
+    <Hero><HeroBody /></Hero>
     <Footer>
       <img src="/static/anton-lind-small.png" alt="Anton Lind" />
-      <Markdown>{body}</Markdown>
+      <Body />
     </Footer>
   </>
 );
